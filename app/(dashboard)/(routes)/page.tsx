@@ -1,5 +1,9 @@
-import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
-  return <p>Esta es un ruta protegida</p>;
+  return (
+    <div>
+      <UserButton afterSignOutUrl="/"></UserButton>
+    </div>
+  );
 }
