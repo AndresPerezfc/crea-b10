@@ -3,7 +3,6 @@ import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { LayoutDashboard } from "lucide-react";
 import { redirect } from "next/navigation";
-import { boolean } from "zod";
 import { TitleForm } from "./_components/title-form";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
