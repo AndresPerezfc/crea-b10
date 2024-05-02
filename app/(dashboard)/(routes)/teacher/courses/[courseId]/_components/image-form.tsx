@@ -42,21 +42,21 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course Image
+        Imagen del curso
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && <>Cancel</>}
 
           {!isEditing && !initialData.imageUrl && (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Add an image
+              Añadir imagen
             </>
           )}
 
           {!isEditing && initialData.imageUrl && (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Change image
+              Cambiar imagen
             </>
           )}
         </Button>
@@ -88,7 +88,7 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
             }}
           />
           <div className="text-xs text-muted-foreground mt-4">
-            16:9 aspect ratio recommented
+            16:9 relación de aspecto recomendada
           </div>
         </div>
       )}
