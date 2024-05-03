@@ -21,11 +21,10 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { Course } from "@prisma/client";
 
 interface DescriptionFormProps {
-  initialData: {
-    description: string;
-  };
+  initialData: Course;
   courseId: string;
 }
 
@@ -45,7 +44,7 @@ export const DescriptionForm = ({
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: initialData,
+    defaultValues: { description: initialData?.description || "" },
   });
 
   const { isSubmitting, isValid } = form.formState;
@@ -53,24 +52,24 @@ export const DescriptionForm = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Curso actualizado");
+      toast.success("Course update");
       toggleEdit();
       router.refresh();
     } catch {
-      toast.error("Algo ha salido mal :(");
+      toast.error("Something went wrong");
     }
   };
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Descripción del curso
+        Course Description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancelar</>
+            <>Cancel</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Editar descripción del curso
+              Edit description
             </>
           )}
         </Button>
@@ -110,7 +109,7 @@ export const DescriptionForm = ({
             />
             <div className="flex items-center gap-x-2">
               <Button disabled={!isValid || isSubmitting} type="submit">
-                Guardar
+                Save
               </Button>
             </div>
           </form>
