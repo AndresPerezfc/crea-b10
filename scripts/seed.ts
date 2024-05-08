@@ -24,4 +24,6 @@ async function main() {
   }
 }
 
+// para ejecutar el script "node scripts/seed.ts"
+
 main();
