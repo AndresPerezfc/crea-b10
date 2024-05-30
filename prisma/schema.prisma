@@ -120,3 +120,7 @@ model StripeCustomer {
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt()
 }
+
+// Despues de modificar el schema se deben ejecutar los siguientes comandos
+// npx prisma generate
+// npx prisma db push
