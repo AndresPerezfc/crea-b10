@@ -60,14 +60,14 @@ export const AttachmentForm = ({
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course Attachments
+        Recursos educativos
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && <>Cancel</>}
 
           {!isEditing && (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Add a file
+              Añadir archivo
             </>
           )}
         </Button>
@@ -76,7 +76,7 @@ export const AttachmentForm = ({
         <>
           {initialData.attachments.length === 0 && (
             <p className="text-sm mt-2 text-slate-500 italic">
-              No attachments yet
+              El curso no tiene recursos educativos
             </p>
           )}
 
