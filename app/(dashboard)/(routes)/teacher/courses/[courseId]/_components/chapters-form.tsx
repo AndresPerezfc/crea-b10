@@ -96,7 +96,7 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
           ) : (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Add a chapter
+              Añadir lección
             </>
           )}
         </Button>
