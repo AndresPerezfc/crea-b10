@@ -63,7 +63,7 @@ export const ChapterVideoForm = ({
           {!isEditing && initialData.videoUrl && (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Change video
+              Cambiar video
             </>
           )}
         </Button>
