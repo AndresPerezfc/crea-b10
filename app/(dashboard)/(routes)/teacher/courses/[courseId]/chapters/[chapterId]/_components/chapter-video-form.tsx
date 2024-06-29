@@ -56,7 +56,7 @@ export const ChapterVideoForm = ({
           {!isEditing && !initialData.videoUrl && (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Add a video
+              Añadir video
             </>
           )}
 
