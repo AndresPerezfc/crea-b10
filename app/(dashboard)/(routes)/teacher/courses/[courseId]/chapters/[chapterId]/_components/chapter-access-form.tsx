@@ -62,6 +62,7 @@ export const ChapterAccessForm = ({
         `/api/courses/${courseId}/chapters/${chapterId}`,
         values
       );
+
       toast.success("Chapter update");
       toggleEdit();
       router.refresh();
